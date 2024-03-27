@@ -64,6 +64,7 @@ This produces a list containing two registrations:
 
 ```
 country date        reg_id                               registry status    subnet         type
+------- ----        ------                               -------- ------    ------         ----
 LT      2019-01-10  6de0db3c-65bd-4fbd-9031-a782e094d4f5 ripencc  allocated 141.98.8.0/22  ipv4
 LT      2023-05-16  6de0db3c-65bd-4fbd-9031-a782e094d4f5 ripencc  allocated 2a0f:8a40::/29 ipv6
 ```
@@ -86,6 +87,7 @@ The results provide us with several data:
 
 ```
 src_subnet       count src_hosts dest_ports src_country src_registry src_reg_id
+----------       ----- --------- ---------- ----------- ------------ ----------
 79.124.0.0/18    1725  14        1722       BG          ripencc      15529f71-b7f4-4452-9b67-65a257a2ab72
 91.148.188.0/22  570   4         570        BG          ripencc      15529f71-b7f4-4452-9b67-65a257a2ab72
 92.63.196.0/22   464   3         464        RU          ripencc      da91a251-3fe5-4df4-9302-41a156df95cb
@@ -117,4 +119,4 @@ Contact
 [the developer](mailto:frank.wayne@northwestern.edu?subject=TA-rirstats)
 with questions, bug reports or change requests. You can also refer or
 contribute to the 
-[GitHub repository](https://github.com/thatfrankwayne/TA_network-port-numbers).
+[GitHub repository](https://github.com/thatfrankwayne/TA-rirstats).
