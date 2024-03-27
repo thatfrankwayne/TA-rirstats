@@ -1,0 +1,23 @@
+
+[commands]
+access = read : [ admin, sc_admin ], write : [ admin, sc_admin ]
+export = system
+
+[commands/input]
+access = read : [ admin, sc_admin ], write : [ admin, sc_admin ]
+
+[lookups]
+access = read : [ * ], write : [ admin, sc_admin ]
+export = system
+
+[lookups/rirstats.csv]
+access = read : [ * ], write : [ admin, sc_admin ]
+export = system
+
+[savedsearches/TA-rirstats%20Refresh%20Lookup]
+access = read : [ admin, sc_admin ], write : [ admin, sc_admin ]
+export = system
+
+[transforms/rirstats]
+access = read : [ * ], write : [ * ]
+export = system
