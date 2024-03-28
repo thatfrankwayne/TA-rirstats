@@ -108,6 +108,22 @@ Bulgarian holder (based on the opaque-id provided in src_reg_id).
 The TA should be installed only on search heads. It can be deployed to a search
 head cluster via a deployer. It will run on Linux or Windows.
 
+You *must* change `max_memtable_bytes` in **limits.conf** on any search head
+with this TA. In a distributed environment, you *must* also update the setting
+on all indexers. If you do not change this setting, lookups with rirstats will
+generate *no results and no errors*. It simply won't work.
+
+The `max_memtable_bytes` value must exceed the size of the rirstats.csv file. I
+recommend setting it to 64MiB, like this:
+
+```
+[lookup]
+max_memtable_bytes = 67108864
+```
+
+You can place this in **$SPLUNK_HOME/etc/system/local/limits.conf** or make a
+**local/limits.conf** for this app when you install it.
+
 Once per week (by default), the TA runs a scheduled search named `TA-rirstats
 Refresh Lookup` that refreshes the lookup table with the latest data from the
 five registries. This functionality requires Splunk 8.0 or later (i.e. Python
