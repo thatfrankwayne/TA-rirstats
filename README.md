@@ -17,7 +17,7 @@ to find all ranges associated with a particular registration.
 Assume that a pfsense firewall named "pfsense" sends syslog to Splunk to an 
 index named "syslog". We are interested in external traffic hitting our
 firewall on non-HTTP ports, which probably indicate port scans since we do not
-adviertise other services for this IP (1.2.3.4 in this example).
+advertise other services for this IP (1.2.3.4 in this example).
 
 ```
 index=syslog host=pfsense dest_ip=1.2.3.4 NOT dest_port IN (80, 443)
