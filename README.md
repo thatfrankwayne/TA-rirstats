@@ -73,7 +73,7 @@ LT      2023-05-16  6de0db3c-65bd-4fbd-9031-a782e094d4f5 ripencc  allocated 2a0f
 
 ### Example 2
 
-Using the assumptions from Example 1, we want to know that top five *subnets*
+Using the assumptions from Example 1, we want to know the top five *subnets*
 on the Internet that are responsible for the most unsolicited traffic and where
 the holders are registered. We run this search for events over the last 24
 hours:
@@ -83,6 +83,7 @@ index=syslog host=pfsense dest_ip=1.2.3.4 NOT dest_port IN (80, 443)
 | lookup rirstats subnet AS src_ip OUTPUT subnet AS src_subnet reg_id AS src_reg_id status AS src_status country AS src_country registry AS src_registry
 | stats count dc(src_ip) AS src_hosts dc(dest_port) AS dest_ports first(src_country) AS src_country first(src_registry) AS src_registry first(src_reg_id) AS src_reg_id BY src_subnet
 | sort 0 -count
+| head 5
 ```
 
 The results provide us with several data:
