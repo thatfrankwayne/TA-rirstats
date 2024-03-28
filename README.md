@@ -29,8 +29,10 @@ Extant extractions produce CIM fields like `src_ip`, `dest_ip`, and
 We can include RIR subnet, registration ID (opaque-id in RIR terminology),
 status, and the registration country for the `src_ip` by adding this lookup:
 
-    index=syslog host=pfsense dest_ip=1.2.3.4 NOT dest_port IN (80, 443)
-    | lookup rirstats subnet AS src_ip OUTPUT subnet AS src_subnet reg_id AS src_reg_id status AS src_status country AS src_country registry AS src_registry
+```
+index=syslog host=pfsense dest_ip=1.2.3.4 NOT dest_port IN (80, 443)
+| lookup rirstats subnet AS src_ip OUTPUT subnet AS src_subnet reg_id AS src_reg_id status AS src_status country AS src_country registry AS src_registry
+```
 
 Our event detail now includes more information about the `src_ip`:
 
