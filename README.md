@@ -102,7 +102,8 @@ Bulgarian holder (based on the opaque-id provided in src_reg_id).
 
 ## Prerequisites and Dependencies
 
-The TA should be installed only on search heads. It can be deployed to a search head cluster via a deployer. It will run on Linux or Windows.
+The TA should be installed only on search heads. It can be deployed to a search
+head cluster via a deployer. It will run on Linux or Windows.
 
 Once per week (by default), the TA runs a scheduled search named `TA-rirstats
 Refresh Lookup` that refreshes the lookup table with the latest data from the
@@ -115,8 +116,9 @@ The TA was developed by Frank Wayne.
 
 ## Support Contact
 
-Contact
-[the developer](mailto:frank.wayne@northwestern.edu?subject=TA-rirstats)
+Check the [PDF documentation](https://github.com/thatfrankwayne/TA-rirstats/blob/main/readme/TA-rirstats-3.pdf)
+for installation and other information.
+
+Contact [the developer](mailto:frank.wayne@northwestern.edu?subject=TA-rirstats)
 with questions, bug reports or change requests. You can also refer or
-contribute to the 
-[GitHub repository](https://github.com/thatfrankwayne/TA-rirstats).
+contribute to the [GitHub repository](https://github.com/thatfrankwayne/TA-rirstats).
