@@ -34,11 +34,11 @@ import sys
 
 
 RIRSTATS_URL = [
-    'http://ftp.afrinic.net/stats/afrinic/delegated-afrinic-extended-latest',
-    'http://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest',
-    'http://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
-    'http://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest',
-    'http://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest'
+    'https://ftp.afrinic.net/stats/afrinic/delegated-afrinic-extended-latest',
+    'https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest',
+    'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
+    'https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest',
+    'https://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest'
     ]
 
 
@@ -174,7 +174,7 @@ def get_stats_list_from_url(url: str) -> list:
     result = []
     log_info(f"starting download of RIR stats from {url}")
     try:
-        r = requests.get(url)
+        r = requests.get(url)  # all URLs are now HTTP/TLS
     except Exception as e:
         log_error(f"encountered exception {type(e)}: \"{e}\"")
         exit(1)
